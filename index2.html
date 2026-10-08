@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Alluri Bharathi | Portfolio</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #f8fafc;
+        background: #080b18;
+        line-height: 1.6;
+      }
+
+      /* BACKGROUND */
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(90px);
+        z-index: -2;
+        opacity: 0.35;
+      }
+
+      body::before {
+        width: 360px;
+        height: 360px;
+        background: #7c3aed;
+        top: 70px;
+        left: -120px;
+      }
+
+      body::after {
+        width: 400px;
+        height: 400px;
+        background: #06b6d4;
+        right: -150px;
+        bottom: 30px;
+      }
+
+      /* NAVBAR */
+
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(8, 11, 24, 0.8);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      nav {
+        max-width: 1150px;
+        margin: auto;
+        padding: 18px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: Poppins;
+        font-size: 26px;
+        font-weight: 800;
+        background: linear-gradient(90deg, #a78bfa, #22d3ee);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #67e8f9;
+      }
+
+      /* HERO */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 25px 70px;
+      }
+
+      .hero-wrap {
+        max-width: 1150px;
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 55px;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 8px 15px;
+        border-radius: 50px;
+        background: rgba(34, 211, 238, 0.1);
+        border: 1px solid rgba(34, 211, 238, 0.35);
+        color: #67e8f9;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-family: Poppins;
+        font-size: clamp(45px, 7vw, 76px);
+        line-height: 1.05;
+        margin-bottom: 18px;
+      }
+
+      .gradient {
+        background: linear-gradient(90deg, #a78bfa, #22d3ee, #34d399);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+        color: #cbd5e1;
+        margin-bottom: 18px;
+      }
+
+      .hero p {
+        max-width: 650px;
+        color: #94a3b8;
+        font-size: 16px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .btn {
+        padding: 13px 22px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-block;
+        transition: 0.3s;
+      }
+
+      .primary {
+        color: #07111d;
+        background: linear-gradient(90deg, #a78bfa, #22d3ee);
+      }
+
+      .secondary {
+        color: #e2e8f0;
+        border: 1px solid #334155;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(34, 211, 238, 0.2);
+      }
+
+      /* PROFILE */
+
+      .profile {
+        padding: 40px;
+        border-radius: 28px;
+        background: linear-gradient(
+          145deg,
+          rgba(124, 58, 237, 0.22),
+          rgba(6, 182, 212, 0.1)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+      }
+
+      .avatar {
+        width: 190px;
+        height: 190px;
+        margin: 0 auto 22px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-family: Poppins;
+        font-size: 65px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #7c3aed, #06b6d4);
+        box-shadow: 0 0 55px rgba(34, 211, 238, 0.25);
+      }
+
+      .profile h3 {
+        font-family: Poppins;
+        font-size: 26px;
+      }
+
+      .profile p {
+        color: #94a3b8;
+      }
+
+      .social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .social a {
+        color: #cbd5e1;
+        border: 1px solid #334155;
+        padding: 9px 13px;
+        border-radius: 9px;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .social a:hover {
+        color: #67e8f9;
+        border-color: #22d3ee;
+      }
+
+      /* COMMON SECTION */
+
+      section {
+        max-width: 1150px;
+        margin: auto;
+        padding: 100px 25px;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .title .small {
+        color: #67e8f9;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .title h2 {
+        font-family: Poppins;
+        font-size: 40px;
+        margin-top: 8px;
+      }
+
+      .title p {
+        color: #94a3b8;
+        margin-top: 8px;
+      }
+
+      /* ABOUT */
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 22px;
+      }
+
+      .card {
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+      }
+
+      .card h3 {
+        font-family: Poppins;
+        color: #a78bfa;
+        margin-bottom: 13px;
+      }
+
+      .card p {
+        color: #aebaca;
+      }
+
+      .strengths {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .strength {
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.035);
+        color: #dbeafe;
+      }
+
+      /* SKILLS */
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .skill {
+        padding: 25px;
+        border-radius: 18px;
+        background: linear-gradient(
+          145deg,
+          rgba(30, 41, 59, 0.8),
+          rgba(15, 23, 42, 0.7)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.3s;
+      }
+
+      .skill:hover {
+        transform: translateY(-7px);
+        border-color: #22d3ee;
+      }
+
+      .icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .skill h3 {
+        font-family: Poppins;
+        margin-bottom: 6px;
+      }
+
+      .skill p {
+        color: #94a3b8;
+        font-size: 14px;
+      }
+
+      /* PROJECT */
+
+      .project {
+        max-width: 900px;
+        margin: auto;
+        border-radius: 24px;
+        padding: 35px;
+        background: linear-gradient(
+          135deg,
+          rgba(124, 58, 237, 0.18),
+          rgba(6, 182, 212, 0.08)
+        );
+        border: 1px solid rgba(167, 139, 250, 0.25);
+      }
+
+      .project h3 {
+        font-family: Poppins;
+        font-size: 25px;
+        color: #67e8f9;
+        margin-bottom: 12px;
+      }
+
+      .project p,
+      .project li {
+        color: #b7c3d4;
+      }
+
+      .project ul {
+        padding-left: 20px;
+        margin-top: 15px;
+      }
+
+      .project li {
+        margin: 8px 0;
+      }
+
+      /* EXPERIENCE */
+
+      .timeline {
+        max-width: 900px;
+        margin: auto;
+        border-left: 2px solid #334155;
+        padding-left: 28px;
+      }
+
+      .timeline-card {
+        position: relative;
+        margin-bottom: 25px;
+        padding: 25px;
+        border-radius: 18px;
+        background: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .timeline-card::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #22d3ee;
+        border-radius: 50%;
+        left: -35px;
+        top: 31px;
+        box-shadow: 0 0 15px #22d3ee;
+      }
+
+      .timeline-card h3 {
+        color: #a78bfa;
+        font-family: Poppins;
+      }
+
+      .timeline-card .date {
+        color: #67e8f9;
+        font-size: 13px;
+        font-weight: 700;
+        margin: 4px 0 12px;
+      }
+
+      .timeline-card p {
+        color: #aebaca;
+        margin: 6px 0;
+      }
+
+      /* EDUCATION */
+
+      .edu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .edu h3 {
+        color: #67e8f9;
+      }
+
+      .edu p {
+        margin-top: 5px;
+      }
+
+      /* CERTIFICATIONS */
+
+      .certs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .cert {
+        padding: 27px;
+        border-radius: 18px;
+        background: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .cert h3 {
+        color: #a78bfa;
+        font-family: Poppins;
+      }
+
+      .cert p {
+        color: #aebaca;
+        margin-top: 7px;
+      }
+
+      /* CONTACT */
+
+      .contact {
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .contact-box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 25px;
+      }
+
+      .contact-item {
+        padding: 13px 18px;
+        border-radius: 12px;
+        background: #0f172a;
+        border: 1px solid #263244;
+        color: #cbd5e1;
+      }
+
+      .contact-item a {
+        color: #67e8f9;
+        text-decoration: none;
+      }
+
+      /* FOOTER */
+
+      footer {
+        text-align: center;
+        padding: 35px 20px;
+        color: #64748b;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      footer span {
+        color: #67e8f9;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 850px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-wrap,
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          text-align: center;
+        }
+
+        .hero p {
+          margin: auto;
+        }
+
+        .buttons {
+          justify-content: center;
+        }
+
+        .skills,
+        .edu,
+        .certs {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <header>
+      <nav>
+        <div class="logo">Bharathi.</div>
+
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+
+          <li><a href="#about">About</a></li>
+
+          <li><a href="#skills">Skills</a></li>
+
+          <li><a href="#projects">Projects</a></li>
+
+          <li><a href="#experience">Experience</a></li>
+
+          <li><a href="#education">Education</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+      <div class="hero-wrap">
+        <div>
+          <span class="badge"> AVAILABLE FOR ENTRY-LEVEL OPPORTUNITIES </span>
+
+          <h1>
+            Hi, I'm
+            <span class="gradient"> Alluri Bharathi </span>
+          </h1>
+
+          <h2>Computer Science Engineering Graduate</h2>
+
+          <p>
+            Java Full Stack Developer with knowledge of Core Java, HTML, CSS,
+            JavaScript, MySQL and Python. Passionate about application
+            development, problem solving and building practical software
+            solutions.
+          </p>
+
+          <div class="buttons">
+            <a class="btn primary" href="#projects"> View My Work ↓ </a>
+
+            <a
+              class="btn secondary"
+              href="https://www.linkedin.com/in/alluri-bharathi"
+              target="_blank"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="profile">
+          <div class="avatar">AB</div>
+
+          <h3>Alluri Bharathi</h3>
+
+          <p>Java Full Stack Developer</p>
+
+          <div class="social">
+            <a href="mailto:alluribharathi51@gmail.com"> Email </a>
+
+            <a href="tel:9704527213"> Phone </a>
+
+            <a
+              href="https://www.linkedin.com/in/alluri-bharathi"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="title">
+        <div class="small">GET TO KNOW ME</div>
+
+        <h2>About <span class="gradient">Me</span></h2>
+
+        <p>A quick look at my profile and strengths</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>Who I Am</h3>
+
+          <p>
+            I am a Computer Science Engineering graduate with knowledge of Java
+            Full Stack Development, Core Java, Web Technologies, MySQL and basic
+            Python. I am interested in application development and IT service
+            management and looking for an entry-level opportunity to contribute
+            while enhancing my technical expertise.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>My Strengths</h3>
+
+          <div class="strengths">
+            <div class="strength">⚡ Quick Learner</div>
+
+            <div class="strength">🧩 Problem Solving</div>
+
+            <div class="strength">🤝 Team Collaboration</div>
+
+            <div class="strength">💬 Communication</div>
+
+            <div class="strength">🔍 Debugging</div>
+
+            <div class="strength">🚀 Adaptability</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+      <div class="title">
+        <div class="small">WHAT I KNOW</div>
+
+        <h2>Technical <span class="gradient">Skills</span></h2>
+
+        <p>Technologies and concepts from my professional profile</p>
+      </div>
+
+      <div class="skills">
+        <div class="skill">
+          <div class="icon">☕</div>
+
+          <h3>Java</h3>
+
+          <p>Core Java and Java Full Stack Development</p>
+        </div>
+
+        <div class="skill">
+          <div class="icon">🌐</div>
+
+          <h3>Web Technologies</h3>
+
+          <p>HTML, CSS and JavaScript</p>
+        </div>
+
+        <div class="skill">
+          <div class="icon">🗄️</div>
+
+          <h3>MySQL</h3>
+
+          <p>MySQL Database Management</p>
+        </div>
+
+        <div class="skill">
+          <div class="icon">🐍</div>
+
+          <h3>Python</h3>
+
+          <p>Basic knowledge of Python programming</p>
+        </div>
+
+        <div class="skill">
+          <div class="icon">🔧</div>
+
+          <h3>DBMS</h3>
+
+          <p>Database Management Systems</p>
+        </div>
+
+        <div class="skill">
+          <div class="icon">🧠</div>
+
+          <h3>Problem Solving</h3>
+
+          <p>Analytical thinking, debugging and problem solving</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT -->
+
+    <section id="projects">
+      <div class="title">
+        <div class="small">MY WORK</div>
+
+        <h2>Featured <span class="gradient">Project</span></h2>
+
+        <p>Academic Project</p>
+      </div>
+
+      <div class="project">
+        <h3>🌱 Crop Recommendation System Using Machine Learning</h3>
+
+        <p>
+          A machine learning-based system designed to recommend suitable crops
+          using agricultural data.
+        </p>
+
+        <ul>
+          <li>
+            Recommended suitable crops based on soil properties, weather
+            conditions and historical agriculture data.
+          </li>
+
+          <li>
+            Provided data-driven crop suggestions to support farmers in
+            decision-making.
+          </li>
+
+          <li>
+            Focused on maximizing yield and optimizing resource utilization.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+      <div class="title">
+        <div class="small">PRACTICAL LEARNING</div>
+
+        <h2>Internship <span class="gradient">Experience</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-card">
+          <h3>Web Development Internship</h3>
+
+          <div class="date">WEB DEVELOPMENT</div>
+
+          <p>
+            • Learned application development and web design using HTML, CSS and
+            JavaScript.
+          </p>
+
+          <p>
+            • Built responsive web pages and improved front-end development
+            skills.
+          </p>
+
+          <p>
+            • Gained knowledge of database connectivity and web application
+            development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+      <div class="title">
+        <div class="small">MY BACKGROUND</div>
+
+        <h2>My <span class="gradient">Education</span></h2>
+      </div>
+
+      <div class="edu">
+        <div class="card">
+          <h3>B.Tech - CSE</h3>
+
+          <p>Tadipatri Engineering College</p>
+
+          <p>2021–2025</p>
+
+          <p>
+            <strong>CGPA: 7.78</strong>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Intermediate - MPC</h3>
+
+          <p>A.P.S.W.R.S / JC (G), Kambalapadu</p>
+
+          <p>2019–2021</p>
+
+          <p>
+            <strong>58.3%</strong>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>SSC</h3>
+
+          <p>A.P.S.W.R.S / JC (G), Veldurthy</p>
+
+          <p>2019</p>
+
+          <p>
+            <strong>CGPA: 8.5</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+
+    <section>
+      <div class="title">
+        <div class="small">ACHIEVEMENTS</div>
+
+        <h2>
+          <span class="gradient"> Certifications </span>
+        </h2>
+      </div>
+
+      <div class="certs">
+        <div class="cert">
+          <h3>🏆 NPTEL Certification</h3>
+
+          <p>Data Analysis and Decision Making</p>
+
+          <p>Cloud Computing</p>
+        </div>
+
+        <div class="cert">
+          <h3>🏆 Tap Academy</h3>
+
+          <p>Java Full Stack Development Training Certification</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="title">
+        <div class="small">LET'S CONNECT</div>
+
+        <h2>Contact <span class="gradient">Me</span></h2>
+
+        <p>
+          I'm open to entry-level software development and IT opportunities.
+        </p>
+      </div>
+
+      <div class="contact">
+        <div class="contact-box">
+          <div class="contact-item">
+            📧
+
+            <a href="mailto:alluribharathi51@gmail.com">
+              alluribharathi51@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            📱
+
+            <a href="tel:9704527213"> 9704527213 </a>
+          </div>
+
+          <div class="contact-item">
+            🔗
+
+            <a
+              href="https://www.linkedin.com/in/alluri-bharathi"
+              target="_blank"
+            >
+              LinkedIn Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <p>
+        © 2026
+        <span>Alluri Bharathi</span>
+        • Built with HTML & CSS
+      </p>
+    </footer>
+  </body>
+</html>
